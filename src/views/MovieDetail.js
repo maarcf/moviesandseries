@@ -1,10 +1,6 @@
-import { useRouteMatch } from 'react-router-dom';
-
 import DetailNavBar from '../components/DetailNavBar';
 
 const MovieDetail = () => {
-  const {path} = useRouteMatch();
-  console.log("path", path)
 
   return(
     <>

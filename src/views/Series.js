@@ -6,13 +6,13 @@ const Series = () => {
   return(
     <>
       <h2>Soy Series</h2>
-      <Link to={`/series/popular/page/${number}`}>
+      <Link to={`/tv/popular/page/${number}`}>
         <p>Series Populares</p>
       </Link>
-      <Link to={`/series/top_rated/page/${number}`}>
+      <Link to={`/tv/top_rated/page/${number}`}>
         <p>Series Mejores Punuadas</p>
       </Link>
-      <Link to={`/series/on_the_air/page/${number}`}>
+      <Link to={`/tv/on_the_air/page/${number}`}>
         <p>Series A estrenarsea</p>
       </Link>
     </>

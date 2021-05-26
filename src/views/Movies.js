@@ -9,16 +9,16 @@ const Movies = () => {
     <>
       <h2>Soy Movies</h2>
       {/* Category vendría desde la api. Al igual que la pag.*/}
-      <Link to={`/movies/popular/page/${number}`}>
+      <Link to={`/movie/popular/page/${number}`}>
         <MoviesCardsContainer title="Movies Populares" />
       </Link>
-      <Link to={`/movies/top_rated/page/${number}`}>
+      <Link to={`/movie/top_rated/page/${number}`}>
         <MoviesCardsContainer title="Movies Mejores Puntuadas" />
       </Link>
-      <Link to={`/movies/upcoming/page/${number}`}>
+      <Link to={`/movie/upcoming/page/${number}`}>
         <MoviesCardsContainer title="Movies A estrenarse" />
       </Link>
-      <Link to={`/movies/now_playing/page/${number}`}>
+      <Link to={`/movie/now_playing/page/${number}`}>
         <MoviesCardsContainer title="Movies En el cine" />
       </Link>
     </>

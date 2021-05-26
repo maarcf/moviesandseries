@@ -6,6 +6,7 @@ import Card from '../components/Card';
 const MoviesCategory = () => {
   
   const params = useParams();
+  console.log(params)
   
 
   const categories = {
@@ -30,59 +31,59 @@ const MoviesCategory = () => {
       <h2>{getCategory()}</h2>
 
       <section>
-        <Link className="link-style" to="/movies/0001/info">
+        <Link className="link-style" to="/movie/0001/info">
           <Card />
         </Link>
 
-        <Link className="link-style" to="/movies/0002/info">
+        <Link className="link-style" to="/movie/0002/info">
           <Card />
         </Link>
 
-        <Link className="link-style" to="/movies/0003/info">
+        <Link className="link-style" to="/movie/0003/info">
           <Card />
         </Link>
 
-        <Link className="link-style" to="/movies/0001/info">
+        <Link className="link-style" to="/movie/0001/info">
           <Card />
         </Link>
 
-        <Link className="link-style" to="/movies/0004/info">
+        <Link className="link-style" to="/movie/0004/info">
           <Card />
         </Link>
 
-        <Link className="link-style" to="/movies/0005/info">
+        <Link className="link-style" to="/movie/0005/info">
           <Card />
         </Link>
 
-        <Link className="link-style" to="/movies/0006/info">
+        <Link className="link-style" to="/movie/0006/info">
           <Card />
         </Link>
 
-        <Link className="link-style" to="/movies/0007/info">
+        <Link className="link-style" to="/movie/0007/info">
           <Card />
         </Link>
 
-        <Link className="link-style" to="/movies/0008/info">
+        <Link className="link-style" to="/movie/0008/info">
           <Card />
         </Link>
 
-        <Link className="link-style" to="/movies/0009/info">
+        <Link className="link-style" to="/movie/0009/info">
           <Card />
         </Link>
 
-        <Link className="link-style" to="/movies/0010/info">
+        <Link className="link-style" to="/movie/0010/info">
           <Card />
         </Link>
 
-        <Link className="link-style" to="/movies/0011/info">
+        <Link className="link-style" to="/movie/0011/info">
           <Card />
         </Link>
 
-        <Link className="link-style" to="/movies/0012/info">
+        <Link className="link-style" to="/movie/0012/info">
           <Card />
         </Link>
 
-        <Link className="link-style" to="/movies/0013/info">
+        <Link className="link-style" to="/movie/0013/info">
           <Card />
         </Link>
       </section>

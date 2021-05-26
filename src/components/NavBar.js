@@ -4,15 +4,21 @@ const NavBar = () => {
   return (
     <nav>
       <ul>
-        <NavLink activeClassName="selected" exact to="/">
-          <li>Home</li>
-        </NavLink>
-        <NavLink activeClassName="selected" exact to="/movies">
-          <li>Movies</li>
-        </NavLink>
-        <NavLink activeClassName="selected" exact to="/series">
-          <li>Series</li>
-        </NavLink>
+        <li>
+          <NavLink activeClassName="selected" exact to="/">
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink activeClassName="selected" exact to="/movie">
+            Movies
+          </NavLink>
+        </li>
+        <li>
+          <NavLink activeClassName="selected" exact to="/tv">
+            Series
+          </NavLink>
+        </li>
         <li>Search</li>
       </ul>
     </nav>

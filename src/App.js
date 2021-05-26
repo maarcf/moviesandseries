@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Home from './views/Home';
@@ -9,6 +8,7 @@ import Series from './views/Series';
 import SeriesCategory from './views/SeriesCategory';
 import SerieDetail from './views/SerieDetail';
 import Search from './views/Search';
+import Person from './views/Person';
 import PageNotFound from './views/PageNotFound';
 import NavBar from './components/NavBar';
 
@@ -21,15 +21,16 @@ const App = () => {
       <NavBar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/movies" component={Movies} />
-        <Route exact path="/movies/:category/page/:pageNumber" component={MoviesCategory} />
-        <Route exact path="/movies/:id/info" component={MovieDetail} />
+        <Route exact path="/movie" component={Movies} />
+        <Route exact path="/movie/:category/page/:pageNumber" component={MoviesCategory} />
+        <Route exact path="/movie/:id/:detail" component={MovieDetail} />
         {/*Esto es repetitivo, pensar un solo componente genérico. En vez de separar movies y series
          porque son componentes y rutas iguales en estructura.*/}
-        <Route exact path="/series" component={Series} />
-        <Route exact path="/series/:category/page/:pageNumber" component={SeriesCategory} />
-        <Route exact path="/series/:id/info" component={SerieDetail} />
+        <Route exact path="/tv" component={Series} />
+        <Route exact path="/tv/:category/page/:pageNumber" component={SeriesCategory} />
+        <Route exact path="/tv/:id/info" component={SerieDetail} />
         <Route exact path="/search/:query/page/:pageNumber" component={Search} />
+        <Route exact path="/person/:id/:detail" component={Person} />
         <Route component={PageNotFound} />
       </Switch>
     </BrowserRouter>
