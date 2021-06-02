@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Card from './Card';
 
 const SeriesCardsContainer = ({ title }) => {
+  console.log('Soy seriesCardContainer y tiro un error en consola sobre el <a>. Revisarme luego!')
   return(
     <main>
       <h2>{title}</h2>

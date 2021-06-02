@@ -1,4 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { theme } from './styles/theme';
 
 import Home from './views/Home';
 import Movies from './views/Movies';
@@ -12,28 +14,60 @@ import Person from './views/Person';
 import PageNotFound from './views/PageNotFound';
 import NavBar from './components/NavBar';
 
-import './App.css';
+//import './App.css';
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {        
+    font-family: ${props => props.theme.font.family.all};
+    color: ${props => props.theme.colors.textPrimary};
+    background-color: ${props => props.theme.colors.bgPrimary};   
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+`;
 
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/movie" component={Movies} />
-        <Route exact path="/movie/:category/page/:pageNumber" component={MoviesCategory} />
-        <Route exact path="/movie/:id/:detail" component={MovieDetail} />
-        {/*Esto es repetitivo, pensar un solo componente genérico. En vez de separar movies y series
-         porque son componentes y rutas iguales en estructura.*/}
-        <Route exact path="/tv" component={Series} />
-        <Route exact path="/tv/:category/page/:pageNumber" component={SeriesCategory} />
-        <Route exact path="/tv/:id/info" component={SerieDetail} />
-        <Route exact path="/search/:query/page/:pageNumber" component={Search} />
-        <Route exact path="/person/:id/:detail" component={Person} />
-        <Route component={PageNotFound} />
-      </Switch>
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <BrowserRouter>
+        <NavBar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/movie" component={Movies} />
+          <Route exact path="/movie/:category/page/:pageNumber" component={MoviesCategory} />
+          <Route exact path="/movie/:id/:detail" component={MovieDetail} />
+          {/*Esto es repetitivo, pensar un solo componente genérico. En vez de separar movies y series
+          porque son componentes y rutas iguales en estructura.*/}
+          <Route exact path="/tv" component={Series} />
+          <Route exact path="/tv/:category/page/:pageNumber" component={SeriesCategory} />
+          <Route exact path="/tv/:id/info" component={SerieDetail} />
+          <Route exact path="/search/:query/page/:pageNumber" component={Search} />
+          <Route exact path="/person/:id/:detail" component={Person} />
+          <Route component={PageNotFound} />
+        </Switch>
+      </BrowserRouter>      
+    </ThemeProvider>
+
   );
 };
 

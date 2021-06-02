@@ -1,27 +1,34 @@
-import { NavLink } from "react-router-dom";
+import styled from 'styled-components';
+
+import NavigationList from './NavigationList';
+import { Flex, ImageContainer, ImageStyled } from './Commons';
+
+import Logo from '../utils/img/logo.png';
+
+const NavStyled = styled(Flex)`
+  width: 100%;
+  background-color: ${props => props.theme.colors.bgSecondary};
+  padding: ${props => props.theme.spaces.extraSmall} ${props => props.theme.spaces.small}
+`;
+
+const MainTitle = styled.h1`
+  font-family: ${props => props.theme.font.family.h1};
+  color: ${props => props.theme.colors.textSecondary};
+  font-size: ${props => props.theme.sizes.large};
+`;
 
 const NavBar = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink activeClassName="selected" exact to="/">
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink activeClassName="selected" exact to="/movie">
-            Movies
-          </NavLink>
-        </li>
-        <li>
-          <NavLink activeClassName="selected" exact to="/tv">
-            Series
-          </NavLink>
-        </li>
-        <li>Search</li>
-      </ul>
-    </nav>
+    <NavStyled as='nav'
+    justifyContent='space-between'>
+      <Flex tabIndex="0">
+        <ImageContainer width='50px'>
+          <ImageStyled src={Logo} alt="Logo de Peliculas y Series App." />
+        </ImageContainer>
+        <MainTitle>MORIC PLAY</MainTitle>
+      </Flex>
+      <NavigationList />
+    </NavStyled>
   );
 };
 
