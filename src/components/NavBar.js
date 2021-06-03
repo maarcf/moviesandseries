@@ -11,10 +11,8 @@ const NavStyled = styled(Flex)`
   padding: ${props => props.theme.spaces.extraSmall} ${props => props.theme.spaces.small}
 `;
 
-const MainTitle = styled.h1`
-  font-family: ${props => props.theme.font.family.h1};
-  color: ${props => props.theme.colors.textSecondary};
-  font-size: ${props => props.theme.sizes.large};
+const LogoContainer = styled(ImageContainer)`
+  margin-right: ${props => props.theme.spaces.small};
 `;
 
 const NavBar = () => {
@@ -22,12 +20,13 @@ const NavBar = () => {
     <NavStyled as='nav'
     justifyContent='space-between'>
       <Flex tabIndex="0">
-        <ImageContainer width='50px'>
+        <LogoContainer width='50px'>
           <ImageStyled src={Logo} alt="Logo de Peliculas y Series App." />
-        </ImageContainer>
-        <MainTitle>MORIC PLAY</MainTitle>
+        </LogoContainer>
+
+        <NavigationList />
       </Flex>
-      <NavigationList />
+      
     </NavStyled>
   );
 };

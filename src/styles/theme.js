@@ -2,7 +2,6 @@ export const theme = {
   font: {
     family: {
       all: "'Roboto', sans-serif",
-      h1: "'Acme', sans-serif",
     },
     fontWeight: {
       thin: '300',
