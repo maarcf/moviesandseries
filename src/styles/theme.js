@@ -24,7 +24,7 @@ export const theme = {
   },
 
   breakpoints: {
-    extraSmall: "450px",
+    extraSmall: "350px",
     small: "500px",
     medium: "750px",
     large: "1100px",

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export const Flex = styled.div`
   display: flex;
@@ -32,7 +32,22 @@ export const NavLinkStyled = styled(NavLink)`
     svg {
       color: ${props => props.theme.colors.textSecondary};
     }
+
+    p {
+      color: ${props => props.theme.colors.textSecondary};
+    }
   }
+
+  &:visited, &:active {
+    color: ${props => props.theme.colors.textPrimary};
+  }
+`;
+
+export const LinkStyled = styled(Link)`
+  color: ${props => props.theme.colors.textPrimary};
+  display: flex;
+  flex-direction: ${props => props.flexDirection || "column"};  
+  align-items: ${props => props.alignItems || "center"};
 
   &:visited, &:active {
     color: ${props => props.theme.colors.textPrimary};
@@ -47,7 +62,7 @@ export const ItemListStyled = styled.li`
 
 export const ListStyled = styled.ul`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 `;
 

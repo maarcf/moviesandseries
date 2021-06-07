@@ -1,12 +1,21 @@
+import styled from 'styled-components';
 
 import { NavLinkStyled, ItemListStyled } from './Commons';
 
-const ItemList = ({ path, icon }) => {
+const NavLinkMenu = styled(NavLinkStyled)`
+  @media (max-width:${props => props.theme.breakpoints.medium}) {
+    svg {
+      font-size: 40px;
+    }
+  }
+`;
+
+const ItemList = ({ path, ariaLabel, icon }) => {
   return(
     <ItemListStyled>
-      <NavLinkStyled activeClassName="selected" exact to={path}>
+      <NavLinkMenu activeClassName="selected" exact to={path} aria-label={ariaLabel}>
         {icon}
-      </NavLinkStyled>
+      </NavLinkMenu>
     </ItemListStyled>
   );
 };

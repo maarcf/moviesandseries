@@ -23,6 +23,11 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  h1, h2, h3, h4, h5, h6, p {
+    font-weight: ${props => props.theme.font.fontWeight.thin};
+
+  }
+
   body {        
     font-family: ${props => props.theme.font.family.all};
     color: ${props => props.theme.colors.textPrimary};
