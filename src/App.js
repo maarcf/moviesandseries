@@ -14,8 +14,6 @@ import Person from './views/Person';
 import PageNotFound from './views/PageNotFound';
 import NavBar from './components/NavBar';
 
-//import './App.css';
-
 const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
@@ -48,7 +46,6 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 `;
-
 
 const App = () => {
   return (
