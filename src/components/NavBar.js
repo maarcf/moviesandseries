@@ -42,7 +42,7 @@ const NavBar = () => {
     <NavStyled as='nav'
     justifyContent='space-between'>
       <Flex>        
-        <LinkLogo to="/" >
+        <LinkLogo to="/" flexDirection="column" >
           <Title>MC PLAY</Title>
           <LogoContainer width='50px'>
             <ImageStyled src={Logo} alt="Logo de Peliculas y Series App." />

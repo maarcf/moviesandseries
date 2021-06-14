@@ -1,21 +1,40 @@
-import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+import { Flex } from '../components/Commons';
+import useFetch from '../hooks/useFetch';
 
 import MoviesCardsContainer from '../components/MoviesCardsContainer';
 import SeriesCardsContainer from '../components/SeriesCardsContainer';
 
-let number = 1;
+const HomeSection = styled(Flex)`
+  max-width: 1300px;
+  margin: ${props => props.theme.spaces.large} ${props => props.theme.spaces.medium};
+`; 
 
 const Home = () => {
+  const movieInfo = useFetch('trending', 'movie')
+  const tvInfo = useFetch('trending', 'tv')
+
+  console.log(movieInfo)
+  console.log(tvInfo)
   return(
-    <>
-      <h2>Soy Home</h2>
-      <Link to={`/movies/trending/page/${number}`}>
-        <MoviesCardsContainer title="Movies Tendencia" />
-      </Link>
-      <Link to={`/Series/trending/page/${number}`}>
-        <SeriesCardsContainer title="Series Tendencia" />     
-      </Link>
-    </>
+    <HomeSection as="main"
+      flexDirection="column"
+      justifyContent="center">
+        <MoviesCardsContainer 
+          title="Películas que son tendencia" 
+          mediaType="movie"
+          category= "trending"
+          info= {movieInfo}
+        />
+
+        <MoviesCardsContainer 
+          title="Series que son tendencia" 
+          mediaType="tv" 
+          category= "trending"
+          info= {tvInfo}
+        /> 
+    </HomeSection>
   )
 
 }

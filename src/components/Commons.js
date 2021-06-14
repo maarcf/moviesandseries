@@ -46,11 +46,16 @@ export const NavLinkStyled = styled(NavLink)`
 export const LinkStyled = styled(Link)`
   color: ${props => props.theme.colors.textPrimary};
   display: flex;
-  flex-direction: ${props => props.flexDirection || "column"};  
+  flex-direction: ${props => props.flexDirection};
+  justify-content: ${props => props.justifyContent};  
   align-items: ${props => props.alignItems || "center"};
 
   &:visited, &:active {
     color: ${props => props.theme.colors.textPrimary};
+  }
+
+  svg {
+    color: ${props => props.theme.colors.textSecondary};
   }
 `;
 

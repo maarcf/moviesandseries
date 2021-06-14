@@ -11,6 +11,7 @@ const MenuList = styled(ListStyled)`
   @media (max-width:${props => props.theme.breakpoints.medium}) {
     background-color: ${props => props.theme.colors.bgSecondary};
     position: fixed;
+    z-index: 1;
     bottom: 0;
     left: 0;
     right: 0;
