@@ -65,7 +65,3 @@ export const ListStyled = styled.ul`
   justify-content: space-around;
   align-items: center;
 `;
-
-export const NavStyled = styled.nav`
-
-`;
