@@ -28,7 +28,6 @@ const NavigationList = () => {
       <ItemList path="/tv" ariaLabel="Series" icon={<LiveTvIcon />} />
     </MenuList>
   );
-
 };
 
 export default NavigationList;
