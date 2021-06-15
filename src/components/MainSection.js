@@ -13,15 +13,15 @@ const CardsSection = styled(Flex)`
 
 const MainSection = ({ title, mediaType, category, info }) => {
   const { pathname } = useLocation();
-  const isPrincipalView = (pathname === '/' 
+  const isFirstView = (pathname === '/' 
   || pathname === '/movie' || pathname === '/tv');
-  console.log(isPrincipalView);
+  console.log(isFirstView);
 
   return(
     <CardsSection as="main" 
       flexDirection="column"
       alignItems="flex-start">
-        { isPrincipalView 
+        { isFirstView 
           ? <LinkStyled to={`/${mediaType}/${category}/page/1`}>
               <Flex justifyContent="space-between">
                 <SectionTitle>{ title }</SectionTitle>
@@ -31,7 +31,7 @@ const MainSection = ({ title, mediaType, category, info }) => {
           : <SectionTitle>{ title }</SectionTitle> 
         }
 
-        { isPrincipalView
+        { isFirstView
           ? <CardsContainer info={cutArray([...info], 5)} mediaType={mediaType}/> 
           : <CardsContainer info={info} />
         }      

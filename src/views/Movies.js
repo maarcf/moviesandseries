@@ -1,6 +1,5 @@
 import { MainContainer } from '../components/Commons';
 import MainSection from '../components/MainSection';
-
 import useFetch from '../hooks/useFetch';
 
 
@@ -13,7 +12,7 @@ const Movies = () => {
 
   return(
     <MainContainer flexDirection="column"
-    justifyContent="center">
+      justifyContent="center">
       <MainSection 
           title="Películas populares" 
           mediaType="movie"

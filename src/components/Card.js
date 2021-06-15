@@ -41,6 +41,7 @@ const Img = styled(ImageStyled)`
 const Title = styled.h3`
   font-size: ${props => props.theme.sizes.medium};
   margin-top: ${props => props.theme.spaces.small};
+  padding: 0 ${props => props.theme.spaces.small};
 
   @media (max-width:${props => props.theme.breakpoints.small}) {
     font-size: ${props => props.theme.sizes.small};
@@ -59,7 +60,8 @@ const Card = ({ title, name, id, poster_path, mediaType }) => {
   return(
     <LinkSt to={`/${mediaType}/${id}/info`}>
       <Flex as="article"
-        flexDirection="column">
+        flexDirection="column"
+        alignItems="flex-start">
           <ImgContainer>
             <Img src={image} alt={title || name} />
           </ImgContainer>
