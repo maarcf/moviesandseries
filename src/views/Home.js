@@ -1,15 +1,9 @@
-import styled from 'styled-components';
 
-import { Flex } from '../components/Commons';
+import { MainContainer } from '../components/Commons';
 import useFetch from '../hooks/useFetch';
 
-import MoviesCardsContainer from '../components/MoviesCardsContainer';
-import SeriesCardsContainer from '../components/SeriesCardsContainer';
+import MainSection from '../components/MainSection';
 
-const HomeSection = styled(Flex)`
-  max-width: ${props => props.theme.maxWidth};
-  margin: ${props => props.theme.spaces.large} ${props => props.theme.spaces.medium};
-`; 
 
 const Home = () => {
   const movieInfo = useFetch('trending', 'movie')
@@ -18,23 +12,22 @@ const Home = () => {
   console.log(movieInfo)
   console.log(tvInfo)
   return(
-    <HomeSection as="main"
-      flexDirection="column"
+    <MainContainer flexDirection="column"
       justifyContent="center">
-        <MoviesCardsContainer 
+        <MainSection 
           title="Películas que son tendencia" 
           mediaType="movie"
           category= "trending"
           info= {movieInfo}
         />
 
-        <MoviesCardsContainer 
+        <MainSection 
           title="Series que son tendencia" 
           mediaType="tv" 
           category= "trending"
           info= {tvInfo}
         /> 
-    </HomeSection>
+    </MainContainer>
   )
 
 }

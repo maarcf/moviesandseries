@@ -1,29 +1,48 @@
-import { Link } from 'react-router-dom';
+import { MainContainer } from '../components/Commons';
+import MainSection from '../components/MainSection';
 
-import MoviesCardsContainer from '../components/MoviesCardsContainer';
+import useFetch from '../hooks/useFetch';
 
-let number = 1;
 
 const Movies = () => {
-  return(
-    <>
-      <h2>Soy Movies</h2>
-      {/* Category vendría desde la api. Al igual que la pag.*/}
-      <Link to={`/movie/popular/page/${number}`}>
-        <MoviesCardsContainer title="Movies Populares" />
-      </Link>
-      <Link to={`/movie/top_rated/page/${number}`}>
-        <MoviesCardsContainer title="Movies Mejores Puntuadas" />
-      </Link>
-      <Link to={`/movie/upcoming/page/${number}`}>
-        <MoviesCardsContainer title="Movies A estrenarse" />
-      </Link>
-      <Link to={`/movie/now_playing/page/${number}`}>
-        <MoviesCardsContainer title="Movies En el cine" />
-      </Link>
-    </>
-  )
+  const popularMovies = useFetch('popular', 'movie')
+  const topRatedMovies = useFetch('top_rated', 'movie')
+  const upcomingMovies = useFetch('upcoming', 'movie')
+  const nowPlayingMovies = useFetch('now_playing', 'movie')
 
-}
+
+  return(
+    <MainContainer flexDirection="column"
+    justifyContent="center">
+      <MainSection 
+          title="Películas populares" 
+          mediaType="movie"
+          category= "popular"
+          info={popularMovies}
+        />
+
+        <MainSection 
+          title="Películas con mejores críticas" 
+          mediaType="movie"
+          category= "top_rated"
+          info={topRatedMovies}
+        />
+
+        <MainSection 
+          title="Películas a estrenarse" 
+          mediaType="movie"
+          category= "upcoming"
+          info={upcomingMovies}
+        />
+
+        <MainSection 
+          title="Películas en el cine" 
+          mediaType="movie"
+          category= "now_playing"
+          info={nowPlayingMovies}
+        />
+    </MainContainer>
+  )
+};
 
 export default Movies;

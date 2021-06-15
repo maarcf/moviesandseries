@@ -10,11 +10,16 @@ const MoviesCategory = () => {
   
 
   const categories = {
-    popular: "Movies Populares",
-    top_rated: "Movies Mejores Puntuadas",
-    upcoming: "Movies A estrenarse",
-    now_playing: "Movies En el cine",
-    trending: "Movies Tendencia"
+    movie: {
+      popular: "Películas Populares",
+      top_rated: "Películas con mejores críticas",
+      upcoming: "Películas a estrenarse",
+      now_playing: "Películas en el cine",
+      trending: "Películas que son tendencia"
+    },
+    tv: {
+      popular: "Series Populares"
+    }
   }
 
   const getCategory = () => {

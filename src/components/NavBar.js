@@ -42,17 +42,18 @@ const NavBar = () => {
     <NavStyled as='nav'
     justifyContent='space-between'>
       <Flex>        
-        <LinkLogo to="/" flexDirection="column" >
-          <Title>MC PLAY</Title>
-          <LogoContainer width='50px'>
-            <ImageStyled src={Logo} alt="Logo de Peliculas y Series App." />
-          </LogoContainer>          
+        <LinkLogo to="/"> 
+          <Flex flexDirection="column">
+            <Title>MC PLAY</Title>
+            <LogoContainer width='50px'>
+              <ImageStyled src={Logo} alt="Logo de Peliculas y Series App." />
+            </LogoContainer>  
+          </Flex>        
         </LinkLogo>
         <NavigationList />
       </Flex>
       
-      <SearchForm />
-      
+      <SearchForm />      
     </NavStyled>
   );
 };

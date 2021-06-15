@@ -5,7 +5,7 @@ import NoImage from '../utils/img/no-image.png'
 
 const BASE_IMG_URL = "https://image.tmdb.org/t/p/w370_and_h556_bestv2";
 
-const CardInfo = styled(Flex)`
+const LinkSt = styled(LinkStyled)`
   width: calc(20%);
   padding: 5px;
   margin: ${props => props.theme.spaces.small} 0;
@@ -57,15 +57,16 @@ const Card = ({ title, name, id, poster_path, mediaType }) => {
   const image = poster_path ? `${BASE_IMG_URL + poster_path}` : NoImage;
 
   return(
-    <CardInfo as="article"
-      flexDirection="column">
-      <LinkStyled to={`${mediaType}/${id}/info`} flexDirection="column" alignItems="flex-start">
-        <ImgContainer>
-          <Img src={image} alt={title || name} />
-        </ImgContainer>
-        <Title>{title || name }</Title>
-      </LinkStyled>
-    </CardInfo>
+    <LinkSt to={`/${mediaType}/${id}/info`}>
+      <Flex as="article"
+        flexDirection="column">
+          <ImgContainer>
+            <Img src={image} alt={title || name} />
+          </ImgContainer>
+          <Title>{title || name }</Title>
+      </Flex>
+    </LinkSt>    
   )
-}
+};
+
 export default Card;

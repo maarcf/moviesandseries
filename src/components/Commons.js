@@ -45,10 +45,6 @@ export const NavLinkStyled = styled(NavLink)`
 
 export const LinkStyled = styled(Link)`
   color: ${props => props.theme.colors.textPrimary};
-  display: flex;
-  flex-direction: ${props => props.flexDirection};
-  justify-content: ${props => props.justifyContent};  
-  align-items: ${props => props.alignItems || "center"};
 
   &:visited, &:active {
     color: ${props => props.theme.colors.textPrimary};
@@ -69,4 +65,20 @@ export const ListStyled = styled.ul`
   display: flex;
   justify-content: space-around;
   align-items: center;
+`;
+
+export const SectionTitle = styled.h2`
+  font-size: ${props => props.theme.sizes.large};
+  margin-right: ${props => props.theme.spaces.medium};
+
+  @media (max-width:${props => props.theme.breakpoints.small}) {
+    font-size: ${props => props.theme.sizes.medium};
+    margin-right: ${props => props.theme.spaces.small};
+  }
+`;
+
+export const MainContainer = styled(Flex)`
+  max-width: ${props => props.theme.maxWidth};
+  margin: ${props => props.theme.spaces.large} 
+  ${props => props.theme.spaces.medium};
 `;
