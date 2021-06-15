@@ -7,7 +7,7 @@ import MoviesCardsContainer from '../components/MoviesCardsContainer';
 import SeriesCardsContainer from '../components/SeriesCardsContainer';
 
 const HomeSection = styled(Flex)`
-  max-width: 1300px;
+  max-width: ${props => props.theme.maxWidth};
   margin: ${props => props.theme.spaces.large} ${props => props.theme.spaces.medium};
 `; 
 

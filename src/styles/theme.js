@@ -36,4 +36,7 @@ export const theme = {
     medium: "30px",
     large: "60px",
   },
+
+  maxWidth: "1300px",
+  
 }; 
