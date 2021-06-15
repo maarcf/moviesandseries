@@ -24,7 +24,6 @@ const CardsContainer = styled(Flex)`
 `;
 
 const MoviesCardsContainer = ({ title, mediaType, category, info }) => {
-  
   return(
     <CardsSection as="section" 
       flexDirection="column"
