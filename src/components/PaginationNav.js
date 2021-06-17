@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { esES } from '@material-ui/core/locale';
 import Pagination from '@material-ui/lab/Pagination';
+import { useHistory } from 'react-router';
 
 const theme = createMuiTheme({
   palette: {
@@ -25,9 +26,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const PaginationNav = ({ totalPages = 100 }) => {
+const PaginationNav = ({ totalPages = 1, setPage }) => {
   const classes = useStyles();
-  const handleChange = () => console.log('Soy la funcion')
+  const history = useHistory();
+
+  const handleChange = (e, page) => {
+    setPage(page);
+    history.push(`${page}`);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.root}>

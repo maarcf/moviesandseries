@@ -3,9 +3,9 @@ import MainSection from '../components/MainSection';
 import useFetch from '../hooks/useFetch';
 
 const Series = () => {
-  const popularSeries = useFetch('popular', 'tv');
-  const topRatedSeries = useFetch('top_rated', 'tv');
-  const onAirSeries = useFetch('on_the_air', 'tv');
+  const {info: popularSeries} = useFetch('popular', 'tv');
+  const {info: topRatedSeries} = useFetch('top_rated', 'tv');
+  const {info: onAirSeries} = useFetch('on_the_air', 'tv');
 
   return(
     <MainContainer flexDirection="column"

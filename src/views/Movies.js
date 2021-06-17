@@ -4,10 +4,10 @@ import useFetch from '../hooks/useFetch';
 
 
 const Movies = () => {
-  const popularMovies = useFetch('popular', 'movie')
-  const topRatedMovies = useFetch('top_rated', 'movie')
-  const upcomingMovies = useFetch('upcoming', 'movie')
-  const nowPlayingMovies = useFetch('now_playing', 'movie')
+  const {info: popularMovies} = useFetch('popular', 'movie')
+  const {info: topRatedMovies} = useFetch('top_rated', 'movie')
+  const {info: upcomingMovies} = useFetch('upcoming', 'movie')
+  const {info: nowPlayingMovies} = useFetch('now_playing', 'movie')
 
 
   return(

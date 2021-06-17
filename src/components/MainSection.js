@@ -16,6 +16,7 @@ const MainSection = ({ title, mediaType, category, info }) => {
   const isFirstView = (pathname === '/' 
   || pathname === '/movie' || pathname === '/tv');
   console.log(isFirstView);
+  console.log('Main', info)
 
   return(
     <CardsSection as="main" 

@@ -1,4 +1,4 @@
-
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { MainContainer } from '../components/Commons';
@@ -24,12 +24,12 @@ const titles = {
   },
 };
 
-const Categories = () => {   
+const Categories = () => {
+  const [page, setPage] = useState(1);
   const { mediaType, category, pageNumber } = useParams();
   console.log(mediaType, category, pageNumber)
 
-  const info = useFetch(`${category}`, `${mediaType}`);
-
+  const {info, totalPages} = useFetch(category, mediaType,'','', page);
 
   return (
     <MainContainer flexDirection="column"
@@ -41,7 +41,8 @@ const Categories = () => {
         info={info}
       />
 
-      <PaginationNav />
+      <PaginationNav totalPages={totalPages} 
+        setPage={setPage} />      
     </MainContainer>
   );
 };
