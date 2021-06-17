@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { theme } from './styles/theme';
 
+import ScrollToTop from './components/ScrollToTop';
 import Home from './views/Home';
 import Movies from './views/Movies';
 import Categories from './views/Categories';
@@ -52,6 +53,7 @@ const App = () => {
       <GlobalStyle />
       <BrowserRouter>
         <NavBar />
+        <ScrollToTop />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/movie" component={Movies} />

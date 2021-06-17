@@ -5,6 +5,9 @@ import { esES } from '@material-ui/core/locale';
 import Pagination from '@material-ui/lab/Pagination';
 import { useHistory } from 'react-router';
 
+import styled from 'styled-components';
+import { Flex } from './Commons';
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -26,6 +29,16 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const DivStyled = styled(Flex)`
+  @media (max-width:${props => props.theme.breakpoints.small}) {
+    width: 355px;
+  }
+
+  @media (max-width:${props => props.theme.breakpoints.small}) {
+    width: 250px;
+  }
+`;
+
 const PaginationNav = ({ totalPages = 1, setPage }) => {
   const classes = useStyles();
   const history = useHistory();
@@ -36,11 +49,11 @@ const PaginationNav = ({ totalPages = 1, setPage }) => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className={classes.root}>
+    <ThemeProvider theme={theme}>     
+      <DivStyled justifyContent="center" className={classes.root}>
         <Pagination count={totalPages} shape="rounded" 
         color="primary" onChange={handleChange} />
-      </div>
+      </DivStyled>
     </ThemeProvider>
   );
 };
