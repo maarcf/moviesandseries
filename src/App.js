@@ -4,7 +4,7 @@ import { theme } from './styles/theme';
 
 import Home from './views/Home';
 import Movies from './views/Movies';
-import MoviesCategory from './views/MoviesCategory';
+import Categories from './views/Categories';
 import MovieDetail from './views/MovieDetail';
 import Series from './views/Series';
 import SeriesCategory from './views/SeriesCategory';
@@ -56,7 +56,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/movie" component={Movies} />
-          <Route exact path="/movie/:category/page/:pageNumber" component={MoviesCategory} />
+          <Route exact path="/:mediaType/:category/page/:pageNumber" component={Categories} />
           <Route exact path="/movie/:id/:detail" component={MovieDetail} />
           {/*Esto es repetitivo, pensar un solo componente genérico. En vez de separar movies y series
           porque son componentes y rutas iguales en estructura.*/}

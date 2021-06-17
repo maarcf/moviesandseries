@@ -11,25 +11,25 @@ const Series = () => {
     <MainContainer flexDirection="column"
       justifyContent="center">
       <MainSection 
-          title="Series populares" 
-          mediaType="tv"
-          category= "popular"
-          info={popularSeries}
-        />
+        title="Series populares" 
+        mediaType="tv"
+        category= "popular"
+        info={popularSeries}
+      />
 
-        <MainSection 
-          title="Series con mejores críticas" 
-          mediaType="tv"
-          category= "top_rated"
-          info={topRatedSeries}
-        />
+      <MainSection 
+        title="Series con mejores críticas" 
+        mediaType="tv"
+        category= "top_rated"
+        info={topRatedSeries}
+      />
 
-        <MainSection 
-          title="Series al aire" 
-          mediaType="tv"
-          category= "upcoming"
-          info={onAirSeries}
-        />
+      <MainSection 
+        title="Series al aire" 
+        mediaType="tv"
+        category= "on_the_air"
+        info={onAirSeries}
+      />
     </MainContainer>
   )
 };
