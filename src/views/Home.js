@@ -6,25 +6,29 @@ import MainSection from '../components/MainSection';
 
 
 const Home = () => {
-  const {info: movieInfo} = useFetch('trending', 'movie');
-  const {info: tvInfo} = useFetch('trending', 'tv');
+  const {results: movieInfo} = useFetch('trending', 'movie');
+  const {results: tvInfo} = useFetch('trending', 'tv');
 
   return(
     <MainContainer flexDirection="column"
       justifyContent="center">
+      {movieInfo && 
         <MainSection 
           title="Películas que son tendencia" 
           mediaType="movie"
           category= "trending"
           info={movieInfo}
         />
+      }
 
+      {tvInfo && 
         <MainSection 
           title="Series que son tendencia" 
           mediaType="tv" 
           category= "trending"
           info={tvInfo}
-        /> 
+        />
+      } 
     </MainContainer>
   )
 };

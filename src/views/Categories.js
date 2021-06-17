@@ -26,23 +26,28 @@ const titles = {
 
 const Categories = () => {
   const [page, setPage] = useState(1);
-  const { mediaType, category, pageNumber } = useParams();
-  console.log(mediaType, category, pageNumber)
+  const { mediaType, category } = useParams();
 
-  const {info, totalPages} = useFetch(category, mediaType,'','', page);
+  const {
+    results: info, 
+    total_pages: totalPages
+  } = useFetch(category, mediaType,'','', page);
 
   return (
     <MainContainer flexDirection="column"
       justifyContent="center">
-      <MainSection 
-        title={titles[mediaType][category]} 
-        mediaType={mediaType}
-        category= {category}
-        info={info}
-      />
+      {info && 
+        <>
+        <MainSection 
+          title={titles[mediaType][category]} 
+          mediaType={mediaType}
+          category= {category}
+          info={info}
+        />
 
-      <PaginationNav totalPages={totalPages} 
-        setPage={setPage} />      
+        <PaginationNav totalPages={totalPages} setPage={setPage} />
+        </>
+      }      
     </MainContainer>
   );
 };

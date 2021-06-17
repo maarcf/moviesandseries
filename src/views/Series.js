@@ -3,33 +3,39 @@ import MainSection from '../components/MainSection';
 import useFetch from '../hooks/useFetch';
 
 const Series = () => {
-  const {info: popularSeries} = useFetch('popular', 'tv');
-  const {info: topRatedSeries} = useFetch('top_rated', 'tv');
-  const {info: onAirSeries} = useFetch('on_the_air', 'tv');
+  const {results: popularSeries} = useFetch('popular', 'tv');
+  const {results: topRatedSeries} = useFetch('top_rated', 'tv');
+  const {results: onAirSeries} = useFetch('on_the_air', 'tv');
 
   return(
     <MainContainer flexDirection="column"
       justifyContent="center">
-      <MainSection 
-        title="Series populares" 
-        mediaType="tv"
-        category= "popular"
-        info={popularSeries}
-      />
+      {popularSeries && 
+        <MainSection 
+          title="Series populares" 
+          mediaType="tv"
+          category= "popular"
+          info={popularSeries}
+        />
+      }
 
-      <MainSection 
-        title="Series con mejores críticas" 
-        mediaType="tv"
-        category= "top_rated"
-        info={topRatedSeries}
-      />
+      {topRatedSeries && 
+        <MainSection 
+          title="Series con mejores críticas" 
+          mediaType="tv"
+          category= "top_rated"
+          info={topRatedSeries}
+        />
+      }
 
-      <MainSection 
-        title="Series al aire" 
-        mediaType="tv"
-        category= "on_the_air"
-        info={onAirSeries}
-      />
+      {onAirSeries && 
+        <MainSection 
+          title="Series al aire" 
+          mediaType="tv"
+          category= "on_the_air"
+          info={onAirSeries}
+        />
+      }
     </MainContainer>
   )
 };
