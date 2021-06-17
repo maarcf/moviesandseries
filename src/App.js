@@ -61,7 +61,6 @@ const App = () => {
           {/*Esto es repetitivo, pensar un solo componente genérico. En vez de separar movies y series
           porque son componentes y rutas iguales en estructura.*/}
           <Route exact path="/tv" component={Series} />
-          <Route exact path="/tv/:category/page/:pageNumber" component={SeriesCategory} />
           <Route exact path="/tv/:id/info" component={SerieDetail} />
           <Route exact path="/search/:query/page/:pageNumber" component={Search} />
           <Route exact path="/person/:id/:detail" component={Person} />

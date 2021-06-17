@@ -9,7 +9,7 @@ const useFetch = (category, mediaType, id, pageNumber) => {
     fetch(createURL(category, mediaType, id, pageNumber))
     .then(res => res.json())
     .then(data => setInfo(data.results))
-  }, []);
+  }, [category, mediaType, id, pageNumber]);
 
   return info;
 };
