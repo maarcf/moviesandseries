@@ -5,7 +5,6 @@ export const theme = {
     },
     fontWeight: {
       thin: '300',
-      semiBold: '500',
       bold: '700',
     },
   },
