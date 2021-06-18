@@ -11,13 +11,13 @@ const CardsSection = styled(Flex)`
   margin-bottom: ${props => props.theme.spaces.medium};
 `;  
 
-const MainSection = ({ title, mediaType, category, info }) => {
+const InfoSection = ({ title, mediaType, category, info }) => {
   const { pathname } = useLocation();
   const isFirstView = (pathname === '/' 
   || pathname === '/movie' || pathname === '/tv');
 
   return(
-    <CardsSection as="main" 
+    <CardsSection as="section" 
       flexDirection="column"
       alignItems="flex-start">
         { isFirstView 
@@ -38,4 +38,4 @@ const MainSection = ({ title, mediaType, category, info }) => {
   )
 };
 
-export default MainSection;
+export default InfoSection;

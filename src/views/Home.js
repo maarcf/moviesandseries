@@ -1,19 +1,35 @@
+import { useState } from 'react';
 
-import { MainContainer } from '../components/Commons';
+import { MainFlex } from '../components/Commons';
 import useFetch from '../hooks/useFetch';
 
-import MainSection from '../components/MainSection';
+import InfoSection from '../components/InfoSection';
+import Loader from '../components/Loader';
 
 
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   const {results: movieInfo} = useFetch('trending', 'movie');
   const {results: tvInfo} = useFetch('trending', 'tv');
 
+  
+
   return(
-    <MainContainer flexDirection="column"
+    <MainFlex as="main" flexDirection="column"
       justifyContent="center">
+      {/* { 
+        isLoading 
+        ? <Loader />
+        : <InfoSection 
+            title="Películas que son tendencia" 
+            mediaType="movie"
+            category= "trending"
+            info={movieInfo}
+          />
+      } */}
       {movieInfo && 
-        <MainSection 
+        <InfoSection 
           title="Películas que son tendencia" 
           mediaType="movie"
           category= "trending"
@@ -22,14 +38,14 @@ const Home = () => {
       }
 
       {tvInfo && 
-        <MainSection 
+        <InfoSection 
           title="Series que son tendencia" 
           mediaType="tv" 
           category= "trending"
           info={tvInfo}
         />
       } 
-    </MainContainer>
+    </MainFlex>
   )
 };
 

@@ -77,7 +77,7 @@ export const SectionTitle = styled.h2`
   }
 `;
 
-export const MainContainer = styled(Flex)`
+export const MainFlex = styled(Flex)`
   max-width: ${props => props.theme.maxWidth};
   margin: ${props => props.theme.spaces.large} 
   ${props => props.theme.spaces.medium};

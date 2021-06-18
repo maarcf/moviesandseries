@@ -8,12 +8,10 @@ const useFetch = (category, mediaType, id, detaills, pageNumber) => {
   useEffect(() => {
     fetch(createURL(category, mediaType, id, detaills, pageNumber))
     .then(res => res.json())
-    .then(data => {
-      setInfo(data);
-    })
+    .then(data => setInfo(data))
   }, [category, mediaType, id, detaills, pageNumber]);
 
-  return info;
+  return {...info, stopLoading: false};
 };
 
 export default useFetch;

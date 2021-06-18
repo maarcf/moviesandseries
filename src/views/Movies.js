@@ -1,5 +1,5 @@
-import { MainContainer } from '../components/Commons';
-import MainSection from '../components/MainSection';
+import { MainFlex } from '../components/Commons';
+import InfoSection from '../components/InfoSection';
 import useFetch from '../hooks/useFetch';
 
 
@@ -11,10 +11,10 @@ const Movies = () => {
 
 
   return(
-    <MainContainer flexDirection="column"
+    <MainFlex as="main" flexDirection="column"
       justifyContent="center">
       {popularMovies && 
-        <MainSection 
+        <InfoSection 
           title="Películas populares" 
           mediaType="movie"
           category= "popular"
@@ -22,7 +22,7 @@ const Movies = () => {
         />}
 
       {topRatedMovies && 
-        <MainSection 
+        <InfoSection 
           title="Películas con mejores críticas" 
           mediaType="movie"
           category= "top_rated"
@@ -30,7 +30,7 @@ const Movies = () => {
         />}
 
       {upcomingMovies && 
-        <MainSection 
+        <InfoSection 
           title="Películas a estrenarse" 
           mediaType="movie"
           category= "upcoming"
@@ -38,13 +38,13 @@ const Movies = () => {
         />}
 
       {nowPlayingMovies && 
-        <MainSection 
+        <InfoSection 
           title="Películas en el cine" 
           mediaType="movie"
           category= "now_playing"
           info={nowPlayingMovies}
         />}
-    </MainContainer>
+    </MainFlex>
   )
 };
 

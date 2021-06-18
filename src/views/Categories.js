@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { MainContainer } from '../components/Commons';
-import MainSection from '../components/MainSection';
+import { MainFlex } from '../components/Commons';
+import InfoSection from '../components/InfoSection';
 import PaginationNav from '../components/PaginationNav';
 
 import useFetch from '../hooks/useFetch';
@@ -34,11 +34,11 @@ const Categories = () => {
   } = useFetch(category, mediaType,'','', page);
 
   return (
-    <MainContainer flexDirection="column"
+    <MainFlex as="main" flexDirection="column"
       justifyContent="center">
       {info && 
         <>
-        <MainSection 
+        <InfoSection 
           title={titles[mediaType][category]} 
           mediaType={mediaType}
           category= {category}
@@ -48,7 +48,7 @@ const Categories = () => {
         <PaginationNav totalPages={totalPages} setPage={setPage} />
         </>
       }      
-    </MainContainer>
+    </MainFlex>
   );
 };
 
