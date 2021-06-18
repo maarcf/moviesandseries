@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import { ListStyled } from './Commons';
 import ItemList from "./ItemList";
 import InfoDetail from './InfoDetail';
-import MovieSimilar from './MovieSimilar';
+import SimilarDetail from './SimilarDetail';
 import MovieTrailer from './MovieTrailer';
 import ItemCast from './ItemCast';
 
@@ -60,7 +60,8 @@ const DetailNavBar = ({ mediaType, id, info }) => {
         <Route exact path={`/${mediaType}/${id}/episodios`} 
           component={MovieTrailer} />
         <Route exact path={`/${mediaType}/${id}/similar`} 
-          component={MovieSimilar} />      
+          component={() => <SimilarDetail mediaType={mediaType} id={id} />} 
+        />     
       </Switch>
     </>
   )
