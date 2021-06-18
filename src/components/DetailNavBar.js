@@ -6,7 +6,7 @@ import ItemList from "./ItemList";
 import InfoDetail from './InfoDetail';
 import SimilarDetail from './SimilarDetail';
 import MovieTrailer from './MovieTrailer';
-import ItemCast from './ItemCast';
+import CastDetail from './CastDetail';
 
 const NavBar = styled.nav`
   margin-bottom: ${props => props.theme.spaces.medium};
@@ -54,7 +54,8 @@ const DetailNavBar = ({ mediaType, id, info }) => {
           component={() => <InfoDetail mediaType={mediaType} info={info} />} 
         />
         <Route exact path={`/${mediaType}/${id}/cast`} 
-          component={ItemCast} />
+          component={() => <CastDetail mediaType={mediaType} id={id} />} 
+        />
         <Route exact path={`/${mediaType}/${id}/videos`} 
           component={MovieTrailer} />
         <Route exact path={`/${mediaType}/${id}/episodios`} 

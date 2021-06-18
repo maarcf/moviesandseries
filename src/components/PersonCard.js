@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-import { LinkStyled } from '../components/Commons';
+import { Flex } from '../components/Commons';
 import { BASE_IMG_URL } from '../utils/variables';
 import Image from './Image';
 import NoImage from '../utils/img/no-image.png';
 
-const LinkSt = styled(LinkStyled)`
+const PersonContainer = styled(Flex)`
   width: calc(20%);
   padding: 5px;
   margin: ${props => props.theme.spaces.small} 0;
@@ -28,15 +28,15 @@ const LinkSt = styled(LinkStyled)`
 `;
 
 
-const Card = ({ title, name, id, posterImg, mediaType }) => {
+const PersonCard = ({ name, profileImg, character }) => {
 
-  const image = posterImg ? `${BASE_IMG_URL + posterImg}` : NoImage;
+  const image = profileImg ? `${BASE_IMG_URL + profileImg}` : NoImage;
 
   return(
-    <LinkSt to={`/${mediaType}/${id}/info`}>
-      <Image img={image} title={title} name={name} />
-    </LinkSt>    
+    <PersonContainer>
+      <Image img={image} name={name} character={character}/>
+    </PersonContainer>    
   )
 };
 
-export default Card;
+export default PersonCard;

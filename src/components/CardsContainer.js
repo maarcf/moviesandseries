@@ -10,8 +10,8 @@ const CardsContainer = ({ info, mediaType }) => {
           title={element.title} 
           name={element.name}
           id={element.id}
-          poster_path={element.poster_path}
-          mediaType={element.media_type || mediaType}
+          posterImg={element.poster_path}
+          mediaType={element.media_type || mediaType}          
           />
         )
       }

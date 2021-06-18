@@ -8,7 +8,6 @@ import Movies from './views/Movies';
 import Categories from './views/Categories';
 import ItemDetail from './views/ItemDetail';
 import Series from './views/Series';
-import SerieDetail from './views/SerieDetail';
 import Search from './views/Search';
 import Person from './views/Person';
 import PageNotFound from './views/PageNotFound';
@@ -61,7 +60,6 @@ const App = () => {
           <Route exact path="/:mediaType/:id/:detail" component={ItemDetail} />
          
           <Route exact path="/tv" component={Series} />
-          <Route exact path="/tv/:id/info" component={SerieDetail} />
           <Route exact path="/search/:query/page/:pageNumber" component={Search} />
           <Route exact path="/person/:id/:detail" component={Person} />
           <Route component={PageNotFound} />
