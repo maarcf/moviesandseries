@@ -26,7 +26,7 @@ export const NavLinkStyled = styled(NavLink)`
     font-size: ${props => props.theme.sizes.large};
   }
   
-  &.selected {
+  &.selected {    
     border-bottom: 3px solid ${props => props.theme.colors.textSecondary};
 
     svg {
@@ -40,6 +40,10 @@ export const NavLinkStyled = styled(NavLink)`
 
   &:visited, &:active {
     color: ${props => props.theme.colors.textPrimary};
+  }
+
+  @media (max-width:${props => props.theme.breakpoints.extraSmall}) {
+    padding: 5px;
   }
 `;
 
@@ -59,6 +63,10 @@ export const ItemListStyled = styled.li`
   display: flex;
   justify-content: center;
   margin: 0 ${props => props.theme.spaces.extraSmall};
+  
+  @media (max-width:${props => props.theme.breakpoints.extraSmall}) {
+    margin: 0;
+  }
 `;
 
 export const ListStyled = styled.ul`

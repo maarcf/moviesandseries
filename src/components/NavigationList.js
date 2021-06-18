@@ -21,11 +21,11 @@ const MenuList = styled(ListStyled)`
 const NavigationList = () => {
   return(
     <MenuList>
-      <ItemList path="/" ariaLabel="Inicio" icon={<HomeIcon />} />
+      <ItemList path="/" ariaLabel="Inicio" child={<HomeIcon />} />
 
-      <ItemList path="/movie" ariaLabel="Películas" icon={<MovieIcon />} />
+      <ItemList path="/movie" ariaLabel="Películas" child={<MovieIcon />} />
 
-      <ItemList path="/tv" ariaLabel="Series" icon={<LiveTvIcon />} />
+      <ItemList path="/tv" ariaLabel="Series" child={<LiveTvIcon />} />
     </MenuList>
   );
 };

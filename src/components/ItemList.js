@@ -8,13 +8,19 @@ const NavLinkMenu = styled(NavLinkStyled)`
       font-size: 40px;
     }
   }
+  
+  @media (max-width:${props => props.theme.breakpoints.small}) {
+    p {
+      font-size: ${props => props.theme.sizes.small};
+    } 
+  }
 `;
 
-const ItemList = ({ path, ariaLabel, icon }) => {
+const ItemList = ({ path, ariaLabel, child }) => {
   return(
     <ItemListStyled>
       <NavLinkMenu activeClassName="selected" exact to={path} aria-label={ariaLabel}>
-        {icon}
+        {child}
       </NavLinkMenu>
     </ItemListStyled>
   );
