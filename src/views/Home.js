@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { MainFlex } from '../components/Commons';
 import useFetch from '../hooks/useFetch';
 
@@ -8,37 +6,33 @@ import Loader from '../components/Loader';
 
 
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(true);
 
-  const {results: movieInfo} = useFetch('trending', 'movie');
-  const {results: tvInfo} = useFetch('trending', 'tv');
-
-  
+  const {
+    results: movieInfo,
+    isLoading: isLoadingMovie
+  } = useFetch('trending', 'movie');
+  const {
+    results: tvInfo,
+    isLoading: isLoadingTv
+  } = useFetch('trending', 'tv');
 
   return(
     <MainFlex as="main" flexDirection="column"
       justifyContent="center">
-      {/* { 
-        isLoading 
+      { 
+        isLoadingMovie 
         ? <Loader />
-        : <InfoSection 
-            title="Películas que son tendencia" 
-            mediaType="movie"
-            category= "trending"
-            info={movieInfo}
-          />
-      } */}
-      {movieInfo && 
-        <InfoSection 
+        : movieInfo && <InfoSection 
           title="Películas que son tendencia" 
           mediaType="movie"
           category= "trending"
           info={movieInfo}
         />
-      }
+      }        
 
-      {tvInfo && 
-        <InfoSection 
+      {isLoadingTv 
+        ? <Loader />
+        : tvInfo && <InfoSection 
           title="Series que son tendencia" 
           mediaType="tv" 
           category= "trending"

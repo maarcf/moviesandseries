@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { MainFlex } from '../components/Commons';
 import InfoSection from '../components/InfoSection';
 import PaginationNav from '../components/PaginationNav';
-
+import Loader from '../components/Loader';
 import useFetch from '../hooks/useFetch';
 
 const titles = {
@@ -30,24 +30,24 @@ const Categories = () => {
 
   const {
     results: info, 
-    total_pages: totalPages
+    total_pages: totalPages,
+    isLoading
   } = useFetch(category, mediaType,'','', page);
 
   return (
     <MainFlex as="main" flexDirection="column"
       justifyContent="center">
-      {info && 
-        <>
-        <InfoSection 
+      {
+        isLoading
+        ? <Loader />
+        : info && <InfoSection 
           title={titles[mediaType][category]} 
           mediaType={mediaType}
           category= {category}
           info={info}
         />
-
-        <PaginationNav totalPages={totalPages} setPage={setPage} />
-        </>
       }      
+      <PaginationNav totalPages={totalPages} setPage={setPage} />
     </MainFlex>
   );
 };
