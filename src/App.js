@@ -55,13 +55,12 @@ const App = () => {
         <ScrollToTop />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/movie" component={Movies} />
-          <Route exact path="/:mediaType/:category/page/:pageNumber" component={Categories} />
-          <Route exact path="/:mediaType/:id/:detail" component={ItemDetail} />
-         
-          <Route exact path="/tv" component={Series} />
-          <Route exact path="/search/:query/page/:pageNumber" component={Search} />
+          <Route exact path="/movie" component={Movies} />          
+          <Route exact path="/search/:query/page/:pageNumber" component={Search} />          
           <Route exact path="/person/:id/:detail" component={Person} />
+          <Route exact path="/:mediaType/:category/page/:pageNumber" component={Categories} />
+          <Route exact path="/:mediaType/:id/:detail" component={ItemDetail} />         
+          <Route exact path="/tv" component={Series} />
           <Route component={PageNotFound} />
         </Switch>
       </BrowserRouter>      

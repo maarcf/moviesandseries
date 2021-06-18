@@ -69,8 +69,8 @@ const InfoDetail = ({ mediaType, info }) => {
               <Text>{info.overview || noInfo}</Text>
               <Text>Duración: {info.runtime + ' min.' || noInfo}</Text>
               <Text>Géneros: {genres || noInfo}</Text>
-              <Text>Presupuesto: {'USD' + budget || noInfo}</Text>
-              <Text>Recaudación: {'USD' + revenue || noInfo}</Text>          
+              <Text>Presupuesto: {'USD ' + budget || noInfo}</Text>
+              <Text>Recaudación: {'USD ' + revenue || noInfo}</Text>          
               <Text>Producción: {company || noInfo}</Text>
           </InfoContainer>
         }

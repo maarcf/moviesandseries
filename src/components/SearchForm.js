@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
 
@@ -49,10 +50,12 @@ const IconContainer = styled(Flex)`
 
 const SearchForm = () => {
   const [ query, setQuery ] = useState('');
+  const history = useHistory();
 
   const handleSubmit = e => {
     e.preventDefault();
     console.log(query);
+    history.push(`/search/${query}/page/1`);
     setQuery('');
   };
 
