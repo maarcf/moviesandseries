@@ -31,8 +31,8 @@ const InfoSection = ({ title, mediaType, category, info }) => {
         }
 
         { isFirstView
-          ? <CardsContainer info={cutArray([...info], 5)} mediaType={mediaType}/> 
-          : <CardsContainer info={info} />
+          ? <CardsContainer info={cutArray([...info], 5)} mediaType={mediaType} /> 
+          : <CardsContainer info={info} mediaType={mediaType} />
         }      
     </CardsSection>
   )

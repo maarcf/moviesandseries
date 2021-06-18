@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 import { LinkStyled, Flex, ImageStyled, ImageContainer } from '../components/Commons';
-import NoImage from '../utils/img/no-image.png'
-
-const BASE_IMG_URL = "https://image.tmdb.org/t/p/w370_and_h556_bestv2";
+import { BASE_IMG_URL } from '../utils/variables';
+import NoImage from '../utils/img/no-image.png';
 
 const LinkSt = styled(LinkStyled)`
   width: calc(20%);
@@ -17,6 +16,7 @@ const LinkSt = styled(LinkStyled)`
   @media (max-width:${props => props.theme.breakpoints.medium}) {
     width: calc(33.33%);
   }
+  
   @media (max-width:${props => props.theme.breakpoints.small}) {
     width: calc(50%);
   }
@@ -51,7 +51,6 @@ const Title = styled.h3`
     font-size: ${props => props.theme.sizes.medium};
   }
 `;
-
 
 const Card = ({ title, name, id, poster_path, mediaType }) => {
 
