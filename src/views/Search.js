@@ -23,7 +23,7 @@ const Search = () => {
     })    
   }, [query, page]);
 
-  const { results, total_results: totalPages } = info;
+  const { results, total_pages: totalPages } = info;
 
   return (
     <MainFlex as="main" flexDirection="column"

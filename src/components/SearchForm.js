@@ -54,7 +54,6 @@ const SearchForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(query);
     history.push(`/search/${query}/page/1`);
     setQuery('');
   };
