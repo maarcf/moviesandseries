@@ -8,7 +8,7 @@
 - :small_orange_diamond: API Rest.
 - :small_orange_diamond: GIT branches.
 
-### [See the project](https://moviesandseries-bymari.netlify.app/) :zap:
+### [Ir al proyecto](https://moviesandseries-bymari.netlify.app/) :zap:
 
 ### Autora
 - [Mariana Cairo](https://www.linkedin.com/in/mariana-cairo/)
