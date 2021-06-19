@@ -5,7 +5,6 @@ import { ListStyled } from './Commons';
 import ItemList from "./ItemList";
 import InfoDetail from './InfoDetail';
 import SimilarDetail from './SimilarDetail';
-import MovieTrailer from './MovieTrailer';
 import CastDetail from './CastDetail';
 
 const NavBar = styled.nav`
@@ -29,18 +28,6 @@ const DetailNavBar = ({ mediaType, id, info }) => {
             child={<p>REPARTO</p>}
           />
             
-          {
-            mediaType === 'movie'
-            ? <ItemList path={`/${mediaType}/${id}/videos`}
-              ariaLabel={`Detalle de la ${item}`}
-              child={<p>VIDEOS</p>}
-            />
-            : <ItemList path={`/${mediaType}/${id}/episodios`}
-              ariaLabel={`Detalle de la ${item}`}
-              child={<p>EPISODIOS</p>}
-            />
-          }
-
           <ItemList path={`/${mediaType}/${id}/similar`}
             ariaLabel={`Detalle de la ${item}`}
             child={<p>SIMILARES</p>}
@@ -55,10 +42,6 @@ const DetailNavBar = ({ mediaType, id, info }) => {
         <Route exact path={`/${mediaType}/${id}/cast`} 
           component={() => <CastDetail mediaType={mediaType} id={id} />} 
         />
-        <Route exact path={`/${mediaType}/${id}/videos`} 
-          component={MovieTrailer} />
-        <Route exact path={`/${mediaType}/${id}/episodios`} 
-          component={MovieTrailer} />
         <Route exact path={`/${mediaType}/${id}/similar`} 
           component={() => <SimilarDetail mediaType={mediaType} id={id} />} 
         />     

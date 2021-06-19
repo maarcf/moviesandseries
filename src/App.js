@@ -9,7 +9,6 @@ import Categories from './views/Categories';
 import ItemDetail from './views/ItemDetail';
 import Series from './views/Series';
 import Search from './views/Search';
-import Person from './views/Person';
 import PageNotFound from './views/PageNotFound';
 import NavBar from './components/NavBar';
 
@@ -56,8 +55,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/movie" component={Movies} />          
-          <Route exact path="/search/:query/page/:pageNumber" component={Search} />          
-          <Route exact path="/person/:id/:detail" component={Person} />
+          <Route exact path="/search/:query/page/:pageNumber" component={Search} />
           <Route exact path="/:mediaType/:category/page/:pageNumber" component={Categories} />
           <Route exact path="/:mediaType/:id/:detail" component={ItemDetail} />         
           <Route exact path="/tv" component={Series} />
