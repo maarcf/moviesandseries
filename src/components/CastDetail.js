@@ -5,7 +5,7 @@ import useFetch from '../hooks/useFetch';
 
 const CastDetail = ({ mediaType, id }) => {
   const {cast: info, isLoading} = useFetch('', mediaType, id, 'credits');
-  console.log(info)
+  
   return(
     <>
       {
@@ -23,7 +23,7 @@ const CastDetail = ({ mediaType, id }) => {
         </Flex>       
       }
     </>   
-  )
+  );
 };
 
 export default CastDetail;

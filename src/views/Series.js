@@ -3,8 +3,7 @@ import InfoSection from '../components/InfoSection';
 import Loader from '../components/Loader';
 import useFetch from '../hooks/useFetch';
 
-const Series = () => {
-  
+const Series = () => {  
   const {
     results: popularSeries,
     isLoading: isLoadingPopular
@@ -54,7 +53,7 @@ const Series = () => {
         />
       }
     </MainFlex>
-  )
+  );
 };
 
 export default Series;

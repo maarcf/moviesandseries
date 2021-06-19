@@ -4,8 +4,8 @@ import { ThemeProvider } from '@material-ui/styles';
 import { esES } from '@material-ui/core/locale';
 import Pagination from '@material-ui/lab/Pagination';
 import { useHistory } from 'react-router';
-
 import styled from 'styled-components';
+
 import { Flex } from './Commons';
 
 const theme = createMuiTheme({
@@ -40,6 +40,7 @@ const DivStyled = styled(Flex)`
 `;
 
 const PaginationNav = ({ totalPages = 1, setPage }) => {
+  
   const classes = useStyles();
   const history = useHistory();
 

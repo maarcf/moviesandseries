@@ -38,7 +38,6 @@ const Main = styled(Flex)`
 `;
 
 const ItemDetail = () => { 
-
   const { mediaType, id } = useParams();
   const info = useFetch('', mediaType, id);
   const { backdrop_path, isLoading } = info;
@@ -64,11 +63,9 @@ const ItemDetail = () => {
             <DetailNavBar mediaType={mediaType} id={id} info={info} />            
           </Main>
         </>
-      }
-
-      
+      }      
     </> 
-  )
+  );
 };
 
 export default ItemDetail;

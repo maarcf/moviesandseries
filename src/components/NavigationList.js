@@ -4,7 +4,6 @@ import LiveTvIcon from '@material-ui/icons/LiveTv';
 import styled from 'styled-components';
 
 import { ListStyled } from './Commons';
-
 import ItemList from "./ItemList";
 
 const MenuList = styled(ListStyled)`

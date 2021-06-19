@@ -7,25 +7,25 @@ overflow: hidden;
 `;
 
 const Img = styled(ImageStyled)`
-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 
-&:hover {
-  transform: scale(1.2);
-}
+  &:hover {
+    transform: scale(1.2);
+  }
 `;
 
 const Title = styled.h3`
-font-size: ${props => props.theme.sizes.medium};
-margin-top: ${props => props.theme.spaces.small};
-padding: 0 ${props => props.theme.spaces.small};
-
-@media (max-width:${props => props.theme.breakpoints.small}) {
-  font-size: ${props => props.theme.sizes.small};
-}
-
-@media (max-width:${props => props.theme.breakpoints.extraSmall}) {
   font-size: ${props => props.theme.sizes.medium};
-}
+  margin-top: ${props => props.theme.spaces.small};
+  padding: 0 ${props => props.theme.spaces.small};
+
+  @media (max-width:${props => props.theme.breakpoints.small}) {
+    font-size: ${props => props.theme.sizes.small};
+  }
+
+  @media (max-width:${props => props.theme.breakpoints.extraSmall}) {
+    font-size: ${props => props.theme.sizes.medium};
+  }
 `;
 
 const Text = styled.p`
@@ -45,8 +45,7 @@ const Image = ({ img, title, name, character }) => {
         <Title>{title || name }</Title>
         <Text>{character}</Text>
     </Flex>
-  )
-
-}
+  );
+};
 
 export default Image;

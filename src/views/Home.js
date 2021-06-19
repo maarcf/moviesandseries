@@ -3,9 +3,7 @@ import InfoSection from '../components/InfoSection';
 import Loader from '../components/Loader';
 import useFetch from '../hooks/useFetch';
 
-
 const Home = () => {
-
   const {
     results: movieInfo,
     isLoading: isLoadingMovie
@@ -39,7 +37,7 @@ const Home = () => {
         />
       } 
     </MainFlex>
-  )
+  );
 };
 
 export default Home;

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import NavigationList from './NavigationList';
 import SearchForm from './SearchForm';
 import { Flex, ImageContainer, ImageStyled, LinkStyled } from './Commons';
-
 import Logo from '../utils/img/logo.png';
 
 const NavStyled = styled(Flex)`

@@ -32,7 +32,7 @@ const Loader = () => {
       aria-label="Cargando resultados...">
       <SpinLoader />
     </Overlay>
-  )
+  );
 };
 
 export default Loader;

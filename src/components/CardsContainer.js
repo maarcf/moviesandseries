@@ -17,7 +17,7 @@ const CardsContainer = ({ info, mediaType }) => {
         )
       }
     </Flex>
-  )
+  );
 };
 
 export default CardsContainer;

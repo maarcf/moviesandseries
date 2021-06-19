@@ -88,9 +88,8 @@ const InfoDetail = ({ mediaType, info }) => {
               <Text>Producción: {company || noInfo}</Text>
           </InfoContainer>
         }
-
     </Section>
-  )
-}
+  );
+};
 
 export default InfoDetail;

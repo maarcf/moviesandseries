@@ -12,7 +12,6 @@ const NavBar = styled.nav`
   margin-bottom: ${props => props.theme.spaces.medium};
 `;
 
-
 const DetailNavBar = ({ mediaType, id, info }) => {
   const item = mediaType === 'movie' ? 'película' : 'serie';
 
@@ -65,7 +64,7 @@ const DetailNavBar = ({ mediaType, id, info }) => {
         />     
       </Switch>
     </>
-  )
-}
+  );
+};
 
 export default DetailNavBar;

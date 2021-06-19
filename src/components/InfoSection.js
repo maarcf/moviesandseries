@@ -6,7 +6,6 @@ import { cutArray } from '../utils/variables';
 import { LinkStyled, Flex, SectionTitle } from './Commons';
 import CardsContainer from './CardsContainer';
 
-
 const CardsSection = styled(Flex)`
   margin-bottom: ${props => props.theme.spaces.medium};
 `;  
@@ -35,7 +34,7 @@ const InfoSection = ({ title, mediaType, category, info }) => {
           : <CardsContainer info={info} mediaType={mediaType} />
         }      
     </CardsSection>
-  )
+  );
 };
 
 export default InfoSection;

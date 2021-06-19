@@ -27,16 +27,14 @@ const PersonContainer = styled(Flex)`
   }
 `;
 
-
 const PersonCard = ({ name, profileImg, character }) => {
-
   const image = profileImg ? `${BASE_IMG_URL + profileImg}` : NoImage;
 
   return(
     <PersonContainer>
       <Image img={image} name={name} character={character}/>
     </PersonContainer>    
-  )
+  );
 };
 
 export default PersonCard;

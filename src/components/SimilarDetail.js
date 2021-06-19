@@ -13,7 +13,7 @@ const SimilarDetail = ({ mediaType, id }) => {
         : info && <CardsContainer info={info} mediaType={mediaType} />
       }
     </>    
-  )
+  );
 };
 
 export default SimilarDetail;

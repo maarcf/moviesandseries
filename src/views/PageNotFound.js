@@ -106,7 +106,7 @@ const PageNotFound = () => {
         <ImageStyled src="https://media0.giphy.com/media/jWexOOlYe241y/giphy.webp?cid=790b761147b7573dc7bbac3b683d57350885c52f96016361&rid=giphy.webp&ct=s" alt="John Travolta sin saber a dónde ir." />  
       </ImgContainer>
     </Page404>
-  )
+  );
 };
 
 export default PageNotFound;

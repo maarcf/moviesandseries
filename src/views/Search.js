@@ -7,7 +7,6 @@ import PaginationNav from '../components/PaginationNav';
 import Loader from '../components/Loader';
 
 const Search = () => {
-
   const [isLoading, setIsLoading] = useState(false);
   const [info, setInfo] = useState({})
   const [page, setPage] = useState(1);

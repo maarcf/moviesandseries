@@ -41,9 +41,8 @@ const Card = ({ title, name, id, posterImg, mediaType, profileImg }) => {
             <Image img={image} title={title} name={name} />
           </LinkSt>         
       }
-    </>
-       
-  )
+    </>       
+  );
 };
 
 export default Card;
