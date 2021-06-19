@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { LinkStyled } from '../components/Commons';
 import { BASE_IMG_URL } from '../utils/variables';
 import Image from './Image';
+import PersonCard from './PersonCard';
 import NoImage from '../utils/img/no-image.png';
 
 const LinkSt = styled(LinkStyled)`
@@ -27,15 +28,21 @@ const LinkSt = styled(LinkStyled)`
   }
 `;
 
-
-const Card = ({ title, name, id, posterImg, mediaType }) => {
+const Card = ({ title, name, id, posterImg, mediaType, profileImg }) => {
 
   const image = posterImg ? `${BASE_IMG_URL + posterImg}` : NoImage;
 
   return(
-    <LinkSt to={`/${mediaType}/${id}/info`}>
-      <Image img={image} title={title} name={name} />
-    </LinkSt>    
+    <>
+      { 
+        mediaType === 'person'
+        ? <PersonCard profileImg={profileImg} name={name} />
+        : <LinkSt to={`/${mediaType}/${id}/info`}>
+            <Image img={image} title={title} name={name} />
+          </LinkSt>         
+      }
+    </>
+       
   )
 };
 

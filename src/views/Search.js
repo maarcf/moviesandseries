@@ -7,19 +7,16 @@ import PaginationNav from '../components/PaginationNav';
 import Loader from '../components/Loader';
 
 const Search = () => {
+
   const [isLoading, setIsLoading] = useState(false);
   const [info, setInfo] = useState({})
   const [page, setPage] = useState(1);
   const { query } = useParams();
-  console.log(query)
-
-  const URL = 'https://api.themoviedb.org/3/search/multi?api_key=055a0350f6a59ecfcbd9ab2fede17992&language=es-MX';
-
-  const queryParams = `&query=${query}&page=${page}`;  
+  const URL = 'https://api.themoviedb.org/3/search/multi?api_key=055a0350f6a59ecfcbd9ab2fede17992&language=es-MX';  
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(URL + queryParams)
+    fetch(URL + `&query=${query}&page=${page}`)
     .then(res => res.json())
     .then(data => {
       setInfo(data);
@@ -28,7 +25,6 @@ const Search = () => {
   }, [query, page]);
 
   const { results, total_results: totalPages } = info;
-    console.log(results)
 
   return (
     <MainFlex as="main" flexDirection="column"
