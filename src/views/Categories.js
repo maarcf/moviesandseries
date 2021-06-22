@@ -41,6 +41,7 @@ const Categories = () => {
         isLoading
         ? <Loader />
         : info && <InfoSection 
+        // perfecta esta manera de resolver el title
           title={titles[mediaType][category]} 
           mediaType={mediaType}
           category= {category}

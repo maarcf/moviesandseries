@@ -16,6 +16,7 @@ const Home = () => {
   return(
     <MainFlex as="main" flexDirection="column"
       justifyContent="center">
+              {/* excelente el loader */}
       { 
         isLoadingMovie 
         ? <Loader />

@@ -11,6 +11,7 @@ const Search = () => {
   const [info, setInfo] = useState({})
   const [page, setPage] = useState(1);
   const { query } = useParams();
+  // quiza esto deberia estar con las variables en /utils
   const URL = 'https://api.themoviedb.org/3/search/multi?api_key=055a0350f6a59ecfcbd9ab2fede17992&language=es-MX';  
 
   useEffect(() => {
