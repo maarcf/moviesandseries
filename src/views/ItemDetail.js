@@ -44,6 +44,7 @@ const ItemDetail = () => {
   
   const image = backdrop_path 
     ? `https://image.tmdb.org/t/p/original${backdrop_path}` 
+    // un detalle, pero mantene la mayuscula inicial para componentes, y todas las demas variables con minuscula
     : NoImage;
 
   return(
